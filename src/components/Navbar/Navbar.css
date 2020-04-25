@@ -1,0 +1,16 @@
+.nav-container {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  background-color: tomato;
+}
+
+.nav-container h2 {
+  margin: 0 5vw 0 0;
+}
+
+.nav-container h3 {
+  margin: 0 0 0 3vw;
+
+}
+
