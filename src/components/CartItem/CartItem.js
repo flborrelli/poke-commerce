@@ -7,7 +7,9 @@ const CartItem = () => {
   return (
   <>
     <div className="cart-item-container">
-      
+      <Button circular icon='close' color='orange' />
+      <img src={pokeImg} alt=""/>
+      <p>$ 100,00</p>
     </div>
   </>
   );

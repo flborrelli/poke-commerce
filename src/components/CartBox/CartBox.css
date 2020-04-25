@@ -1,5 +1,5 @@
 .cart-box-container {
-  margin-top: 20px;
+  margin-top: 40px;
   width: 25vw;
   border: rgb(88, 88, 88) solid 1px;
   border-radius: 4px;
@@ -7,12 +7,28 @@
   padding: 20px;
 }
 
-.cart-box-container > div {
+.cart-box-container__resume {
   margin-bottom: 5vh;
 }
 
-.cart-box-container > div > p {
+.cart-box-container__resume p {
+  text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  text-align: center;
+}
+
+.cart-box-container__total {
+  display: flex;
+  justify-content: space-between;
+  margin: 3vh 0 1vh 0;
+}
+
+.cart-box-container__total p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cart-box-container__btn {
+  display: flex;
+  justify-content: center;
 }

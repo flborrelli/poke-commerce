@@ -1,20 +1,28 @@
 import React from 'react';
 import './CartBox.css';
 import { Button, Icon } from 'semantic-ui-react'
+import CartItem from '../CartItem/CartItem';
 
 const CartBox = () => {
   return (
   <>
     <div className="cart-box-container">
 
-    <div>
-      <p>Resumo do pedido</p>
+    <div className='cart-box-container__resume'>
+      <p style={{textAlign: 'center'}}>Resumo do pedido</p>
     </div>
 
-    <div>
-      <Button icon labelPosition='right' color='green'>
+    <CartItem />
+
+    <div className='cart-box-container__total'>
+      <p>TOTAL</p>
+      <p>$ 100</p>
+    </div>
+
+    <div className='cart-box-container__btn'>
+      <Button icon labelPosition='right' size='huge' color='olive'>
         Finalizar compra
-      <Icon name='thumbs up outline' />
+      <Icon name='payment' />
     </Button>
     </div>
       
