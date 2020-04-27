@@ -1,22 +1,21 @@
 import React, { useState, useContext, createContext } from "react";
+// import themes from './themes';  
 
 const ThemeContext = createContext();
 
 export const themes =
   {
-    main: {
-      colors: {
-        background: "white",
-        text: "black",
-      },
-    },
     water: {
+      id: 'water',
+      name: 'Água',
       colors: {
         background: "blue",
         text: "white",
       },
     },
     fire: {
+      id: 'fire',
+      name: 'Fogo',
       colors: {
         background: "red",
         text: "white",
@@ -24,8 +23,10 @@ export const themes =
     },
   }
 
+
 export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(themes.main);
+  const [theme, setTheme] = useState(themes.water);
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}

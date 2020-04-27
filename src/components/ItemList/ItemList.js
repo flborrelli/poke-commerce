@@ -2,14 +2,12 @@ import React from 'react';
 import './ItemList.css';
 import ItemCard from '../ItemCard/ItemCard';
 
-const ItemList = () => {
+const ItemList = ({ pokemon }) => {
   return (
     <div className="item-list-container">
-      <ItemCard />
-      <ItemCard />
-      <ItemCard />
-      <ItemCard />
-
+      {pokemon.map(e => (
+        <ItemCard pokeName={e.pokemon.name}/>
+      ))}
     </div>
   );
 }

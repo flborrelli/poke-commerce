@@ -2,8 +2,13 @@ import React from 'react';
 import './CartBox.css';
 import { Button, Icon } from 'semantic-ui-react'
 import CartItem from '../CartItem/CartItem';
+import { useTheme } from '../../context/Theme';
+// import themes from '../../context/themes';
 
 const CartBox = () => {
+
+  const { theme, setTheme } = useTheme();
+
   return (
   <>
     <div className="cart-box-container">
@@ -20,7 +25,7 @@ const CartBox = () => {
     </div>
 
     <div className='cart-box-container__btn'>
-      <Button icon labelPosition='right' size='huge' color='olive'>
+      <Button icon labelPosition='right' size='huge' style={{background: theme.colors.background, color: theme.colors.text}}>
         Finalizar compra
       <Icon name='payment' />
     </Button>
