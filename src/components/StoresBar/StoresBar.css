@@ -1,0 +1,6 @@
+.stores-bar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: rgba(250,99,71, 0.5);
+}

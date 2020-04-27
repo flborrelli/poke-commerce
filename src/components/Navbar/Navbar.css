@@ -2,7 +2,7 @@
   padding: 40px;
   display: flex;
   align-items: center;
-  background-color: tomato;
+  background-color: rgba(250,99,71, 0.9);
 }
 
 .nav-container h2 {
