@@ -14,7 +14,7 @@ const ItemCard = ({ pokeName }) => {
       </div>
 
       <div className='card-container__text'>
-        <p style={{ fontWeight:'bold'}}>{pokeName}</p>
+        <p style={{ fontWeight:'bold'}}>Bulbasauru</p>
         <p>$ 100,00</p>
       </div>
 

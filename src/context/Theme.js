@@ -1,28 +1,7 @@
 import React, { useState, useContext, createContext } from "react";
-// import themes from './themes';  
+import themes from './themes';  
 
 const ThemeContext = createContext();
-
-export const themes =
-  {
-    water: {
-      id: 'water',
-      name: 'Água',
-      colors: {
-        background: "blue",
-        text: "white",
-      },
-    },
-    fire: {
-      id: 'fire',
-      name: 'Fogo',
-      colors: {
-        background: "red",
-        text: "white",
-      },
-    },
-  }
-
 
 export default function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(themes.water);

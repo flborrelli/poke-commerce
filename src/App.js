@@ -5,40 +5,41 @@ import ItemList from "./components/ItemList/ItemList";
 import CartBox from "./components/CartBox/CartBox";
 import StoresBar from "./components/StoresBar/StoresBar";
 import ThemeProvider from "./context/Theme";
-import api from './util/api';
+import { pokeApi } from './util/api';
 import pokeTypes from './util/pokeTypes';
-import axios from 'axios';
+import { useTheme } from './context/Theme';
+// import axios from 'axios';
 
 
 const App = () => {
 
-  const [pokemonArr, setPokemonArr] = useState([]);
+  const [pokemonData, setPokemonData] = useState([])
+  const { theme, setTheme } = useTheme();
 
-  const getAllPokemons = async () => {
-    try{
-      const response = await api.get('/')
-      setPokemonArr(response.data.pokemon)
-    }catch(err){
-      console.log('Error while getting pokemons', err)
-    }
-
-  }
+  const fetchAllPokemonsFromType = async ({ id }) => {
+    const response = await pokeApi.getAllPokemonsFromType(
+      id,
+      pokeTypes,
+      fetch
+    );
+    setPokemonData(response);
+  };
 
   useEffect(() => {
-    getAllPokemons()
-  }, [])
+    fetchAllPokemonsFromType(theme);
+  }, [theme]);
 
-  console.log(pokemonArr)
+  console.log(theme, pokemonData)
 
   return (
-    <ThemeProvider>
+    <>
       <StoresBar />
       <Navbar />
       <div style={{ display: "flex" }}>
-        <ItemList pokemon={pokemonArr}/>
+        <ItemList pokemon={pokemonData}/>
         <CartBox />
       </div>
-    </ThemeProvider>
+    </>
   );
 };
 

@@ -25,7 +25,7 @@ const CartBox = () => {
     </div>
 
     <div className='cart-box-container__btn'>
-      <Button icon labelPosition='right' size='huge' style={{background: theme.colors.background, color: theme.colors.text}}>
+      <Button icon labelPosition='right' size='huge' style={{background: theme.background, color: theme.color}}>
         Finalizar compra
       <Icon name='payment' />
     </Button>

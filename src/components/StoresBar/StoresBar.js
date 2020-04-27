@@ -1,8 +1,8 @@
 import React from 'react';
 import './StoresBar.css';
 import { Button, Icon } from 'semantic-ui-react';
-import { themes, useTheme } from '../../context/Theme';
-// import themes from '../../context/themes';
+import { useTheme } from '../../context/Theme';
+import themes from '../../context/themes';
 
 
 
