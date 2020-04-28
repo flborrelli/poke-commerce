@@ -1,15 +1,16 @@
 import React from 'react';
 import './ItemCard.css';
 import { Button, Icon } from 'semantic-ui-react';
+import pokeballImg from '../../assets/pokeball.png';
 
 
-const ItemCard = ({ pokeName, pokeImg, pokePrice }) => {
+const ItemCard = ({ pokeName, pokeImg, pokePrice, handleAddToCart }) => {
   return (
   <>
     <div className="card-container">
       
       <div>
-        <img src={pokeImg} alt="pokemon"/>
+        <img src={pokeImg === null ? pokeballImg : pokeImg} alt={pokeName}/>
       </div>
 
       <div className='card-container__text'>

@@ -1,8 +1,15 @@
 .stores-bar {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 10px;
   background-color: tomato;
+}
+
+.stores-bar div {
+  color: #ffffff;
+  font-weight: 700;
+  padding-right: 5px;
 }
 
 .stores-bar button {

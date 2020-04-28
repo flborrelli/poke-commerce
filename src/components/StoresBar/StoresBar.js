@@ -13,6 +13,10 @@ const StoresBar = ({ setSearchValue }) => {
   <>
     <div className="stores-bar">
 
+      <div>
+        NOSSAS LOJAS
+      </div>
+
       <Button onClick={() => setTheme(themes.water)}>Água</Button>
       <Button onClick={() => setTheme(themes.dragon)}>Dragão</Button>
       <Button onClick={() => setTheme(themes.fairy)}>Fada</Button>

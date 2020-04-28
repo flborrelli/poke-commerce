@@ -10,7 +10,9 @@ import { useTheme } from "./context/Theme";
 import PageLoader from "./components/PageLoader/PageLoader";
 
 const App = () => {
+
   const [pokemonData, setPokemonData] = useState([]);
+  const [pokemonOnCart, setPokemonOnCart] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [showAllPokemons, setShowAllPokemons] = useState(true);
@@ -28,6 +30,8 @@ const App = () => {
 
   const fetchAllPokemonsFromType = async ({ id }) => {
     setLoading(true);
+    setFilteredPokemons([]);
+    setShowAllPokemons(true);
     const response = await pokeApi.getAllPokemonsFromType(id, pokeTypes, fetch);
     setLoading(false);
     setPokemonData(response);
@@ -60,8 +64,12 @@ const App = () => {
     setFilteredPokemons(filteredArray);
   };
 
-  console.log(searchValue);
-  console.log(filteredPokemons);
+  // const handleAddToCart = (pokeId) => {
+  //   const pokemonsAdded = [];
+  //   pokemonsAdded.unshift(pokeId);
+  //   setPokemonOnCart(pokemonsAdded)  
+  // }
+
 
   return (
     <>
@@ -77,6 +85,7 @@ const App = () => {
               pokemon={pokemonData}
               filteredPokemons={filteredPokemons}
               showAllPokemons={showAllPokemons}
+              // handleAddToCart={handleAddToCart}
             />
             <CartBox />
           </div>
