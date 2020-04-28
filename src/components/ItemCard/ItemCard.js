@@ -1,10 +1,9 @@
 import React from 'react';
 import './ItemCard.css';
-import pokeImg from '../../assets/pikachu.png';
 import { Button, Icon } from 'semantic-ui-react';
 
 
-const ItemCard = ({ pokeName }) => {
+const ItemCard = ({ pokeName, pokeImg, pokePrice }) => {
   return (
   <>
     <div className="card-container">
@@ -14,8 +13,8 @@ const ItemCard = ({ pokeName }) => {
       </div>
 
       <div className='card-container__text'>
-        <p style={{ fontWeight:'bold'}}>Bulbasauru</p>
-        <p>$ 100,00</p>
+        <p style={{ fontWeight:'bold'}}>{pokeName}</p>
+        <p>${pokePrice}</p>
       </div>
 
       <div>

@@ -6,14 +6,14 @@ import { useTheme } from '../../context/Theme';
 import themes from '../../context/themes'
 
 
-const Navbar = () => {
+const Navbar = ({ handleInputChange }) => {
   
   const { theme, setTheme } = useTheme();
 
   return (
     <div className="nav-container" style={{background: theme.background, color: theme.color}}>
-      <h2>Nome da Loja</h2>
-      <SearchBar />
+      <h2>Loja {theme.name.charAt(0).toUpperCase() + theme.name.slice(1)}</h2>
+      <SearchBar handleInputChange={handleInputChange} />
       <h3><Icon name='user circle outline' size='large'></Icon>Olá, Treinador</h3>
     </div>
   );

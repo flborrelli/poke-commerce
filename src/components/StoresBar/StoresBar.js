@@ -13,11 +13,25 @@ const StoresBar = () => {
   <>
     <div className="stores-bar">
 
-      <Button onClick={() => setTheme(theme === themes.water ? themes.water : themes.water)}>Água</Button>
+      <Button onClick={() => setTheme(themes.water)}>Água</Button>
+      <Button onClick={() => setTheme(themes.dragon)}>Dragão</Button>
+      <Button onClick={() => setTheme(themes.fairy)}>Fada</Button>
+      <Button onClick={() => setTheme(themes.ghost)}>Fantasma</Button>
+      <Button onClick={() => setTheme(themes.fire)}>Fogo</Button>
+      <Button onClick={() => setTheme(themes.ice)}>Gelo</Button>
+      <Button onClick={() => setTheme(themes.bug)}>Inseto</Button>
+      <Button onClick={() => setTheme(themes.fighting)}>Lutador</Button>
+      <Button onClick={() => setTheme(themes.steel)}>Metálico</Button>
+      <Button onClick={() => setTheme(themes.normal)}>Normal</Button>
+      <Button onClick={() => setTheme(themes.dark)}>Noturno</Button>
+      <Button onClick={() => setTheme(themes.rock)}>Pedra</Button>
+      <Button onClick={() => setTheme(themes.psychic)}>Psíquico</Button>
+      <Button onClick={() => setTheme(themes.ground)}>Terra</Button>
+      <Button onClick={() => setTheme(themes.poison)}>Venenoso</Button>
+      <Button onClick={() => setTheme(themes.flying)}>Voador</Button>
 
-      <Button onClick={() => setTheme(theme === themes.water ? themes.fire : themes.fire)}>Fogo</Button>
 
-      <Button>Gelo</Button>
+
 
     </div>
   </>
