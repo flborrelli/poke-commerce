@@ -6,7 +6,7 @@ import themes from '../../context/themes';
 
 
 
-const StoresBar = () => {
+const StoresBar = ({ setSearchValue }) => {
   const { theme, setTheme } = useTheme();
 
   return (

@@ -3,7 +3,6 @@ import './Navbar.css';
 import SearchBar from '../SearchBar/SearchBar';
 import { Icon } from 'semantic-ui-react';
 import { useTheme } from '../../context/Theme';
-import themes from '../../context/themes'
 
 
 const Navbar = ({ handleInputChange }) => {

@@ -1,0 +1,12 @@
+.loader {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 40vh;
+  background-color: tomato;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loader span {
+  color: white;
+}

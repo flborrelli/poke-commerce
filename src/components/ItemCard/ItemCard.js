@@ -13,12 +13,12 @@ const ItemCard = ({ pokeName, pokeImg, pokePrice }) => {
       </div>
 
       <div className='card-container__text'>
-        <p style={{ fontWeight:'bold'}}>{pokeName}</p>
-        <p>${pokePrice}</p>
+        <p style={{ fontWeight:'bold'}}>{pokeName.charAt(0).toUpperCase() + pokeName.slice(1)}</p>
+        <p style={{color: 'black'}}>${pokePrice},00</p>
       </div>
 
       <div>
-      <Button icon labelPosition='right' color='green'>
+      <Button icon labelPosition='right' color='green' size='huge'>
       Adicionar
       <Icon name='add to cart' />
     </Button>
