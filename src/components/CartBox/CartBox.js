@@ -31,6 +31,7 @@ const CartBox = ({ pokemonsOnCart = [], handleClick, resetAppState }) => {
           <p>Pokemon no carrinho: {totalItemsOnCart}</p>
         </div>
         <hr />
+        
         {pokemonsOnCart.length < 1 ? (
           <div className="zero-poke">
             Nenhum pokemon adicionado até o momento.
@@ -38,7 +39,7 @@ const CartBox = ({ pokemonsOnCart = [], handleClick, resetAppState }) => {
         ) : (
           pokemonsOnCart.map((pokemon) => {
             return (
-              <div key={pokemon.id}>
+              <div className='pokemon-cart-container' key={pokemon.id}>
                 <CartItem {...pokemon} handleClick={handleClick} />
               </div>
             );

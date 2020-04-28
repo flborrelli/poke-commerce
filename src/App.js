@@ -125,7 +125,7 @@ const App = () => {
           {" "}
           <StoresBar />
           <Navbar handleInputChange={handleSearchInputChange} />
-          <div style={{ display: "flex" }}>
+          <div className='main-container'>
             <ItemList
               pokemon={pokemonData}
               filteredPokemons={filteredPokemons}

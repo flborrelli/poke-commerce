@@ -3,7 +3,6 @@
   width: 25vw;
   border: rgb(216, 214, 214) solid 1px;
   box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.5);
-
   border-radius: 4px;
   padding: 20px;
   max-height: auto;
@@ -44,4 +43,11 @@
 
 hr {
   background-color: black;
+}
+
+@media (max-width: 1500px) {
+  .cart-box-container {
+    margin-top: 50px;
+  }
+  
 }

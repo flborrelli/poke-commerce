@@ -1,3 +1,11 @@
-.loader {
+.main-container {
+  display: flex;
+}
+
+@media (max-width: 1500px) {
+  .main-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
   
 }

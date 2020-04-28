@@ -16,3 +16,10 @@
   background-color: rgb(252, 250, 250, 0.9) !important;
   color: #3b4cca !important;
 }
+
+@media (max-width: 1500px) {
+  .stores-bar {
+    display: none;
+  }
+  
+}
