@@ -4,7 +4,7 @@ import ItemCard from '../ItemCard/ItemCard';
 import { useTheme } from '../../context/Theme';
 
 
-const ItemList = ({ pokemon, showAllPokemons, filteredPokemons }) => {
+const ItemList = ({ pokemon, showAllPokemons, filteredPokemons, handleClick }) => {
   const { theme, setTheme } = useTheme();
   return (
     <div className='item-container'>
@@ -12,9 +12,9 @@ const ItemList = ({ pokemon, showAllPokemons, filteredPokemons }) => {
     <div className="item-list-container">
       {
         showAllPokemons ? pokemon.map(e => (
-        <ItemCard key={e.id} pokeName={e.name} pokeImg={e.sprites.front_default} pokePrice={e.base_experience}/>
+        <ItemCard key={e.id} pokeName={e.name} pokeImg={e.sprites.front_default} pokePrice={e.base_experience} pokeId={e.id} handleClick={handleClick}/>
       )) : filteredPokemons.map(e => (
-        <ItemCard key={e.id} pokeName={e.name} pokeImg={e.sprites.front_default} pokePrice={e.base_experience}/>
+        <ItemCard key={e.id} pokeName={e.name} pokeImg={e.sprites.front_default} pokePrice={e.base_experience} pokeId={e.id} handleClick={handleClick}/>
       ))
       
       }

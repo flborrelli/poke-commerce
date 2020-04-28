@@ -4,7 +4,7 @@ import { Button, Icon } from 'semantic-ui-react'
 import CartItem from '../CartItem/CartItem';
 import { useTheme } from '../../context/Theme';
 
-const CartBox = () => {
+const CartBox = ({ pokemonsOnCart = [], handleClick }) => {
 
   const { theme, setTheme } = useTheme();
 
@@ -15,8 +15,14 @@ const CartBox = () => {
     <div className='cart-box-container__resume'>
       <p style={{textAlign: 'center'}}>Resumo do pedido</p>
     </div>
-
-    <CartItem />
+    {pokemonsOnCart.map((pokemon) => {
+            return (
+              <div className="table-row" key={pokemon.id}>
+                <CartItem {...pokemon} handleClick={handleClick} />
+                </div>
+            )
+    })}
+      
 
     <div className='cart-box-container__total'>
       <p>TOTAL</p>

@@ -4,7 +4,7 @@ import { Button, Icon } from 'semantic-ui-react';
 import pokeballImg from '../../assets/pokeball.png';
 
 
-const ItemCard = ({ pokeName, pokeImg, pokePrice, handleAddToCart }) => {
+const ItemCard = ({ pokeName, pokeImg, pokePrice, handleClick, pokeId }) => {
   return (
   <>
     <div className="card-container">
@@ -19,7 +19,7 @@ const ItemCard = ({ pokeName, pokeImg, pokePrice, handleAddToCart }) => {
       </div>
 
       <div>
-      <Button icon labelPosition='right' color='green' size='huge'>
+      <Button icon labelPosition='right' color='green' size='huge' onClick={() => handleClick(pokeId)}>
       Adicionar
       <Icon name='add to cart' />
     </Button>

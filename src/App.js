@@ -8,11 +8,17 @@ import { pokeApi } from "./util/api";
 import pokeTypes from "./util/pokeTypes";
 import { useTheme } from "./context/Theme";
 import PageLoader from "./components/PageLoader/PageLoader";
+import {
+  togglePokemonIsOnCartFlag,
+  updatePokemonOnCatalogArr,
+  addToCart,
+  removeFromCart,
+} from './util/cartStateHelper.js';
 
 const App = () => {
 
   const [pokemonData, setPokemonData] = useState([]);
-  const [pokemonOnCart, setPokemonOnCart] = useState([]);
+  const [pokemonsOnCart, setOnCart] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [filteredPokemons, setFilteredPokemons] = useState([]);
   const [showAllPokemons, setShowAllPokemons] = useState(true);
@@ -64,11 +70,27 @@ const App = () => {
     setFilteredPokemons(filteredArray);
   };
 
-  // const handleAddToCart = (pokeId) => {
-  //   const pokemonsAdded = [];
-  //   pokemonsAdded.unshift(pokeId);
-  //   setPokemonOnCart(pokemonsAdded)  
-  // }
+  const handleAddToCart = (idFromEvent) => {
+    const foundPokemonIndex = pokemonData.findIndex(
+      ({ id: pokemonId, ...pokemon }) => {
+        // if (pokemon.hasOwnProperty('isOnCart') && pokemon.isOnCart)
+        //   return false;
+        return pokemonId === idFromEvent;
+      }
+    );
+    if (foundPokemonIndex === -1) return;
+    const foundFlaggedPokemon = togglePokemonIsOnCartFlag(
+      pokemonData[foundPokemonIndex]
+    );
+    addToCart(foundFlaggedPokemon, pokemonsOnCart, setOnCart);
+    updatePokemonOnCatalogArr(
+      foundPokemonIndex,
+      foundFlaggedPokemon,
+      pokemonData,
+      setPokemonData
+    );
+  };
+
 
 
   return (
@@ -85,9 +107,10 @@ const App = () => {
               pokemon={pokemonData}
               filteredPokemons={filteredPokemons}
               showAllPokemons={showAllPokemons}
-              // handleAddToCart={handleAddToCart}
+              handleClick={handleAddToCart}
             />
-            <CartBox />
+
+            <CartBox pokemonsOnCart={pokemonsOnCart}  />
           </div>
         </>
       )}

@@ -1,4 +1,3 @@
-// if pokemon object has key "isOnCart", toggles it. If not, assign it as true.
 export const togglePokemonIsOnCartFlag = (pokemon) => {
   const pokemonCopy = { ...pokemon };
   if (pokemonCopy.hasOwnProperty('isOnCart')) {
