@@ -13,7 +13,7 @@ const CartItem = ({
   return (
   <>
     <div className="cart-item-container">
-      <Button circular icon='close' style={{color: 'tomato'}} />
+      <Button circular icon='close' style={{color: 'tomato'}} onClick={() => handleClick(id)} />
       <img src={sprite === null ? {pokeballImg} : sprite} alt={name}/>
       <p>{name}</p>
       <p>{price}</p>

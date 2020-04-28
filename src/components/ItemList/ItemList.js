@@ -4,7 +4,7 @@ import ItemCard from '../ItemCard/ItemCard';
 import { useTheme } from '../../context/Theme';
 
 
-const ItemList = ({ pokemon, showAllPokemons, filteredPokemons, handleClick }) => {
+const ItemList = ({ pokemon, showAllPokemons, filteredPokemons, handleClick}) => {
   const { theme, setTheme } = useTheme();
   return (
     <div className='item-container'>

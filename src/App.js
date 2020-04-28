@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ItemList from "./components/ItemList/ItemList";
 import CartBox from "./components/CartBox/CartBox";
 import StoresBar from "./components/StoresBar/StoresBar";
+import Footer from './components/Footer/Footer';
 import { pokeApi } from "./util/api";
 import pokeTypes from "./util/pokeTypes";
 import { useTheme } from "./context/Theme";
@@ -38,6 +39,7 @@ const App = () => {
     setLoading(true);
     setFilteredPokemons([]);
     setShowAllPokemons(true);
+    setOnCart([]);
     const response = await pokeApi.getAllPokemonsFromType(id, pokeTypes, fetch);
     setLoading(false);
     setPokemonData(response);
@@ -53,6 +55,10 @@ const App = () => {
       setShowAllPokemons(true);
     }
   };
+
+  const resetAppState = () => {
+    fetchAllPokemonsFromType(theme)
+  }
 
   const filterPokemons = () => {
     const pokemonDataCopy = [...pokemonData];
@@ -73,8 +79,8 @@ const App = () => {
   const handleAddToCart = (idFromEvent) => {
     const foundPokemonIndex = pokemonData.findIndex(
       ({ id: pokemonId, ...pokemon }) => {
-        // if (pokemon.hasOwnProperty('isOnCart') && pokemon.isOnCart)
-        //   return false;
+        if (pokemon.hasOwnProperty('isOnCart') && pokemon.isOnCart)
+          return false;
         return pokemonId === idFromEvent;
       }
     );
@@ -91,7 +97,24 @@ const App = () => {
     );
   };
 
-
+  const handleRemoveFromCart = (idFromEvent) => {
+    const foundPokemonOnCartIndex = pokemonsOnCart.findIndex(
+      ({ id: pokemonId }) => pokemonId === idFromEvent
+    );
+    const foundPokemonOnCatalogIndex = pokemonData.findIndex(
+      ({ id: pokemonId }) => pokemonId === idFromEvent
+    );
+    const foundFlaggedPokemon = togglePokemonIsOnCartFlag(
+      pokemonData[foundPokemonOnCatalogIndex]
+    );
+    removeFromCart(foundPokemonOnCartIndex, pokemonsOnCart, setOnCart);
+    updatePokemonOnCatalogArr(
+      foundPokemonOnCatalogIndex,
+      foundFlaggedPokemon,
+      pokemonData,
+      setPokemonData
+    );
+  };
 
   return (
     <>
@@ -109,9 +132,9 @@ const App = () => {
               showAllPokemons={showAllPokemons}
               handleClick={handleAddToCart}
             />
-
-            <CartBox pokemonsOnCart={pokemonsOnCart}  />
+            <CartBox pokemonsOnCart={pokemonsOnCart}  handleClick={handleRemoveFromCart} resetAppState={resetAppState}/>
           </div>
+          <Footer />
         </>
       )}
     </>
