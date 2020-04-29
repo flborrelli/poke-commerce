@@ -8,7 +8,7 @@ const ItemList = ({ pokemon, showAllPokemons, filteredPokemons, handleClick}) =>
   const { theme, setTheme } = useTheme();
   return (
     <div className='item-container'>
-        <h2>Conheça todos os pokemons da loja {theme.name.charAt(0).toUpperCase() + theme.name.slice(1)}</h2>
+        <h2>Conheça todos os pokemons do tipo {theme.name.charAt(0).toUpperCase() + theme.name.slice(1)}</h2>
     <div className="item-list-container">
       {
         showAllPokemons ? pokemon.map(e => (

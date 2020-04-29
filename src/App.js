@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ItemList from "./components/ItemList/ItemList";
 import CartBox from "./components/CartBox/CartBox";
 import StoresBar from "./components/StoresBar/StoresBar";
-import Footer from './components/Footer/Footer';
+import Footer from "./components/Footer/Footer";
 import { pokeApi } from "./util/api";
 import pokeTypes from "./util/pokeTypes";
 import { useTheme } from "./context/Theme";
@@ -14,10 +14,9 @@ import {
   updatePokemonOnCatalogArr,
   addToCart,
   removeFromCart,
-} from './util/cartStateHelper.js';
+} from "./util/cartStateHelper.js";
 
 const App = () => {
-
   const [pokemonData, setPokemonData] = useState([]);
   const [pokemonsOnCart, setOnCart] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -57,8 +56,8 @@ const App = () => {
   };
 
   const resetAppState = () => {
-    fetchAllPokemonsFromType(theme)
-  }
+    fetchAllPokemonsFromType(theme);
+  };
 
   const filterPokemons = () => {
     const pokemonDataCopy = [...pokemonData];
@@ -79,7 +78,7 @@ const App = () => {
   const handleAddToCart = (idFromEvent) => {
     const foundPokemonIndex = pokemonData.findIndex(
       ({ id: pokemonId, ...pokemon }) => {
-        if (pokemon.hasOwnProperty('isOnCart') && pokemon.isOnCart)
+        if (pokemon.hasOwnProperty("isOnCart") && pokemon.isOnCart)
           return false;
         return pokemonId === idFromEvent;
       }
@@ -125,14 +124,18 @@ const App = () => {
           {" "}
           <StoresBar />
           <Navbar handleInputChange={handleSearchInputChange} />
-          <div className='main-container'>
+          <div className="main-container">
             <ItemList
               pokemon={pokemonData}
               filteredPokemons={filteredPokemons}
               showAllPokemons={showAllPokemons}
               handleClick={handleAddToCart}
             />
-            <CartBox pokemonsOnCart={pokemonsOnCart}  handleClick={handleRemoveFromCart} resetAppState={resetAppState}/>
+            <CartBox
+              pokemonsOnCart={pokemonsOnCart}
+              handleClick={handleRemoveFromCart}
+              resetAppState={resetAppState}
+            />
           </div>
           <Footer />
         </>

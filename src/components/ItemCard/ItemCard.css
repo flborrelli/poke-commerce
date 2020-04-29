@@ -23,3 +23,18 @@
   font-size: 2rem;
   margin-bottom: 7px;
 }
+
+
+@media (max-width: 550px) {
+  .card-container {
+    width: 80vw !important;
+    margin-bottom: 10px;
+  }
+
+
+  .button{
+    width: 50vw !important;
+    font-size: 1rem !important;
+  }
+  
+}

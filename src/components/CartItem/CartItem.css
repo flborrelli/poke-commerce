@@ -17,3 +17,17 @@
 .cart-item-container img {
   width: 50px;
 }
+
+
+@media (max-width: 550px) {
+
+  .delete-btn{
+    width: 10vw !important;
+  }
+
+  .cart-item-container p{
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+}

@@ -1,45 +1,119 @@
-import React from 'react';
-import './StoresBar.css';
-import { Button, Icon } from 'semantic-ui-react';
-import { useTheme } from '../../context/Theme';
-import themes from '../../context/themes';
+import React from "react";
+import "./StoresBar.css";
+import { Button, Icon, Dropdown } from "semantic-ui-react";
+import { useTheme } from "../../context/Theme";
+import themes from "../../context/themes";
 
-
-
+const typeOpt = [
+  {
+    key: "Água",
+    text: "Água",
+    value: themes.water,
+  },
+  {
+    key: "Dragão",
+    text: "Dragrão",
+    value: themes.dragon,
+  },
+  {
+    key: "Fada",
+    text: "Fada",
+    value: themes.fairy,
+  },
+  {
+    key: "Fantasma",
+    text: "Fantasma",
+    value: themes.ghost,
+  },
+  {
+    key: "Fogo",
+    text: "Fogo",
+    value: themes.fire,
+  },
+  {
+    key: "Gelo",
+    text: "Gelo",
+    value: themes.ice,
+  },
+  {
+    key: "Inseto",
+    text: "Inseto",
+    value: themes.bug,
+  },
+  {
+    key: "Lutador",
+    text: "Lutador",
+    value: themes.fighting,
+  },
+  {
+    key: "Metálico",
+    text: "Metálico",
+    value: themes.steel,
+  },
+  {
+    key: "Normal",
+    text: "Normal",
+    value: themes.normal,
+  },
+  {
+    key: "Noturno",
+    text: "Noturno",
+    value: themes.dark,
+  },
+  {
+    key: "Pedra",
+    text: "Pedra",
+    value: themes.rock,
+  },
+  {
+    key: "Psíquico",
+    text: "Psíquico",
+    value: themes.psychic,
+  },
+  {
+    key: "Terra",
+    text: "Terra",
+    value: themes.ground,
+  },
+  {
+    key: "Venenoso",
+    text: "Venenoso",
+    value: themes.poison,
+  },
+  {
+    key: "Voador",
+    text: "Voador",
+    value: themes.flying,
+  },
+];
 const StoresBar = ({ setSearchValue }) => {
   const { theme, setTheme } = useTheme();
 
+  const handleDropDownChange = (e, result) => {
+    e.preventDefault();
+    const { value } = result || e.target;
+    setTheme(value);
+  };
+
   return (
-  <>
-    <div className="stores-bar">
+    <>
+      <div className="stores-bar">
+        <div className="stores-bar__text">
+          Tem interesse em outros tipos de Pokemon? Conheça nossa outras lojas!
+        </div>
 
-      <div>
-        NOSSAS LOJAS
+        <div className="dropdown-container">
+          <Dropdown
+            placeholder="Visite nossas outras lojas"
+            fluid
+            selection
+            options={typeOpt}
+            onChange={handleDropDownChange}
+          />
+        </div>
       </div>
-
-      <Button onClick={() => setTheme(themes.water)}>Água</Button>
-      <Button onClick={() => setTheme(themes.dragon)}>Dragão</Button>
-      <Button onClick={() => setTheme(themes.fairy)}>Fada</Button>
-      <Button onClick={() => setTheme(themes.ghost)}>Fantasma</Button>
-      <Button onClick={() => setTheme(themes.fire)}>Fogo</Button>
-      <Button onClick={() => setTheme(themes.ice)}>Gelo</Button>
-      <Button onClick={() => setTheme(themes.bug)}>Inseto</Button>
-      <Button onClick={() => setTheme(themes.fighting)}>Lutador</Button>
-      <Button onClick={() => setTheme(themes.steel)}>Metálico</Button>
-      <Button onClick={() => setTheme(themes.normal)}>Normal</Button>
-      <Button onClick={() => setTheme(themes.dark)}>Noturno</Button>
-      <Button onClick={() => setTheme(themes.rock)}>Pedra</Button>
-      <Button onClick={() => setTheme(themes.psychic)}>Psíquico</Button>
-      <Button onClick={() => setTheme(themes.ground)}>Terra</Button>
-      <Button onClick={() => setTheme(themes.poison)}>Venenoso</Button>
-      <Button onClick={() => setTheme(themes.flying)}>Voador</Button>
-
-
-
-
-    </div>
-  </>
+    </>
   );
-}
+};
 
 export default StoresBar;

@@ -41,13 +41,17 @@
   margin-bottom: 5px;
 }
 
-hr {
-  background-color: black;
-}
 
 @media (max-width: 1500px) {
   .cart-box-container {
     margin-top: 50px;
+    width: 90vw;
+  }
+
+  .modals {
+    width: 100vw !important;
+    justify-content: center;
+    height: -webkit-fill-available;
   }
   
 }

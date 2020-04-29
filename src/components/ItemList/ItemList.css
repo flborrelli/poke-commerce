@@ -44,3 +44,14 @@
   }
   
 }
+
+@media (max-width: 600px) {
+
+  .item-container h2 {
+    font-size: 1.4rem;
+    padding: 5px;
+    margin-bottom: 2px;
+  
+  }
+  
+}
