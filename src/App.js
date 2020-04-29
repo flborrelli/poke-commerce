@@ -27,18 +27,8 @@ const App = () => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    document.title = `Poke-Commerce | ${theme.name}`;
   });
-
-  useEffect(() => {
-    document.title = `PokéShop | ${theme.name}`;
-  });
-
-  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     fetchAllPokemonsFromType(theme);
