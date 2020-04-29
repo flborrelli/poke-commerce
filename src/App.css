@@ -2,7 +2,7 @@
   display: flex;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1000px) {
   .main-container {
     flex-direction: column-reverse;
     align-items: center;
