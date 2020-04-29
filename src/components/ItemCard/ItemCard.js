@@ -19,7 +19,7 @@ const ItemCard = ({ pokeName, pokeImg, pokePrice, handleClick, pokeId, isOnCart 
       </div>
 
       <div className='add-button'>
-        <Button icon labelPosition='right' color='green' size='huge' onClick={() => handleClick(pokeId)}>
+        <Button icon labelPosition='right' color='green' size='big' onClick={() => handleClick(pokeId)}>
           Adicionar
         <Icon name='add to cart' />
       </Button>
