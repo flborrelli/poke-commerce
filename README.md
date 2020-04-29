@@ -2,9 +2,9 @@
 
 # Poke-commerce 
 
-This is a mobile friendly single-page Web application** developed with React :computer:.  
+This is a **mobile friendly single-page Web application** developed with React :computer:.  
 
-For those who loves pokemon, this is a pokeshop app which allows user to navigate through all types pokemon stores and creating a shop cart with your favorites pokemon.
+For those who loves pokemon, this is a pokeshop app which allows user to navigate through all pokemon's type stores and creating a shop cart with their favorites pokemon.
 
 #### API Documentation: https://pokeapi.co/
 
