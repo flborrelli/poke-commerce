@@ -23,6 +23,12 @@
 
 }
 
+.not-found {
+  font-size: 1.5rem;
+  color: tomato;
+  width: 40vw;
+}
+
 @media (max-width: 1000px) {
   .item-list-container {
     display: flex; 
