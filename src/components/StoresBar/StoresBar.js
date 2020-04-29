@@ -1,6 +1,6 @@
 import React from "react";
 import "./StoresBar.css";
-import { Button, Icon, Dropdown } from "semantic-ui-react";
+import { Dropdown } from "semantic-ui-react";
 import { useTheme } from "../../context/Theme";
 import themes from "../../context/themes";
 
@@ -86,6 +86,7 @@ const typeOpt = [
     value: themes.flying,
   },
 ];
+
 const StoresBar = ({ setSearchValue }) => {
   const { theme, setTheme } = useTheme();
 

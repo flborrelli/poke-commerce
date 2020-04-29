@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartItem.css';
 import pokeballImg from '../../assets/pokeball.png';
-import { Button, Icon } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 const CartItem = ({
   id,

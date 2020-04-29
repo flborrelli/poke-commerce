@@ -31,7 +31,7 @@ const CartBox = ({ pokemonsOnCart = [], handleClick, resetAppState }) => {
           <p>Pokemon no carrinho: {totalItemsOnCart}</p>
         </div>
         <hr />
-        
+
         {pokemonsOnCart.length < 1 ? (
           <div className="zero-poke">
             Nenhum pokemon adicionado até o momento.
@@ -39,44 +39,54 @@ const CartBox = ({ pokemonsOnCart = [], handleClick, resetAppState }) => {
         ) : (
           pokemonsOnCart.map((pokemon) => {
             return (
-              <div className='pokemon-cart-container' key={pokemon.id}>
+              <div className="pokemon-cart-container" key={pokemon.id}>
                 <CartItem {...pokemon} handleClick={handleClick} />
               </div>
             );
           })
-        )
-        }
-        {
-          pokemonsOnCart.length < 1 ? <></> : <> <hr/>
-        <div className="cart-box-container__total">
-          <p>Total</p>
-          <p>$ {totalPrice}</p>
-          
-        </div>
-          <hr/>
-        <div className="cart-box-container__btn">
-
-        <Modal onClose={resetAppState} trigger={<Button
-            icon
-            labelPosition="right"
-            size="huge"
-            style={{ background: "#ed564b", color: "white" }}
-          >
-            Finalizar compra
-            <Icon name="payment" />
-          </Button>}>
-    <Modal.Header>Obrigado!</Modal.Header>
-    <Modal.Content image>
-      <Image wrapped size='medium' src={pokeballImg} />
-      <Modal.Description>
-        <Header>Seu pedido será processado e enviado em breve.</Header>
-        <p style={{fontSize: '1.5rem'}}>Você ganhou de volta ${totalPrice/20}</p>
-      </Modal.Description>
-    </Modal.Content>
-  </Modal>
-        </div>
-        </>
-        }
+        )}
+        {pokemonsOnCart.length < 1 ? (
+          <></>
+        ) : (
+          <>
+            {" "}
+            <hr />
+            <div className="cart-box-container__total">
+              <p>Total</p>
+              <p>$ {totalPrice}</p>
+            </div>
+            <hr />
+            <div className="cart-box-container__btn">
+              <Modal
+                onClose={resetAppState}
+                trigger={
+                  <Button
+                    icon
+                    labelPosition="right"
+                    size="huge"
+                    style={{ background: "#ed564b", color: "white" }}
+                  >
+                    Finalizar compra
+                    <Icon name="payment" />
+                  </Button>
+                }
+              >
+                <Modal.Header>Obrigado!</Modal.Header>
+                <Modal.Content image>
+                  <Image wrapped size="medium" src={pokeballImg} />
+                  <Modal.Description>
+                    <Header>
+                      Seu pedido será processado e enviado em breve.
+                    </Header>
+                    <p style={{ fontSize: "1.5rem" }}>
+                      Você ganhou de volta ${totalPrice / 20}
+                    </p>
+                  </Modal.Description>
+                </Modal.Content>
+              </Modal>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
