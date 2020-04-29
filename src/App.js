@@ -24,7 +24,21 @@ const App = () => {
   const [showAllPokemons, setShowAllPokemons] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
+  useEffect(() => {
+    document.title = `PokéShop | ${theme.name}`;
+  });
+
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     fetchAllPokemonsFromType(theme);

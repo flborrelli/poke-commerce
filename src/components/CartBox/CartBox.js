@@ -6,7 +6,7 @@ import pokeballImg from "../../assets/pokeball.png";
 import { useTheme } from "../../context/Theme";
 
 const CartBox = ({ pokemonsOnCart = [], handleClick, resetAppState }) => {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
 
   const totalPrice = pokemonsOnCart.reduce(
     (acc, { base_experience: price }) => {

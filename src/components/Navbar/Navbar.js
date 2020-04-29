@@ -7,7 +7,7 @@ import { useTheme } from '../../context/Theme';
 
 const Navbar = ({ handleInputChange }) => {
   
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className="nav-container" style={{background: theme.background, color: theme.color}}>

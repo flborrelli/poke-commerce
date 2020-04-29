@@ -88,7 +88,7 @@ const typeOpt = [
 ];
 
 const StoresBar = ({ setSearchValue }) => {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   const handleDropDownChange = (e, result) => {
     e.preventDefault();

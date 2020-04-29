@@ -9,7 +9,7 @@ const ItemList = ({
   filteredPokemons,
   handleClick,
 }) => {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <div className="item-container">
       <h2>
